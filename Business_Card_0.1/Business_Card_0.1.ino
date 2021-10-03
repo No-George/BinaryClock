@@ -52,13 +52,13 @@ void setup() {
   //RTC ///
   Serial.println("Checking I2C device...");
   if (faboRTC.searchDevice()) {
-    Serial.println("configuring RTC");
+    Serial.print("configuring RTC...");
     faboRTC.configure();
   } else {
     Serial.println("device not found");
     while(1);
   }
-  Serial.println("set date/time");
+  Serial.println("setting time to noon\n");
   faboRTC.setDate(years,months,days,hours,minutes,seconds);
 
   ///LED ///

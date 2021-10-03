@@ -78,9 +78,9 @@ void updateLEDs(){
             ///Set Seconds
             for (int i = (0+offset); i < (6+offset); i++) {
               if (bitRead(seconds, (i-offset))) {
-                  leds[i] = CHSV(0, 255, 10*multiplier);
+                  leds[i] = CHSV(160, 255, 10*multiplier);
               } else {
-                  leds[i] = CHSV(0, 255, 5*multiplier);  
+                  leds[i] = CHSV(160, 255, 5*multiplier);  
               }
             }
             
@@ -98,9 +98,9 @@ void updateLEDs(){
             offset = 12;
             for (int i = (0+offset); i < (5+offset); i++) {
               if (bitRead(hours, (i-offset))) {
-                  leds[i] = CHSV(160, 255, 10*multiplier);
+                  leds[i] = CHSV(0, 255, 10*multiplier);
               } else {
-                  leds[i] = CHSV(160, 255, 5*multiplier);  
+                  leds[i] = CHSV(0, 255, 5*multiplier);  
               }
             }
      
@@ -119,45 +119,7 @@ void updateLEDs(){
               hue+=15;
               if (hue>255){hue-=255;}
           }
-          break; 
-
-
-
-/*
-      //hours minutes seconds   ...RGB  with adaptive brightness            
-      case 3: 
-            ///Set Seconds
-            for (int i = (0+offset); i < (6+offset); i++) {
-              if (bitRead(seconds, (i-offset))) {
-                  leds[i] = CHSV(0, 255, 10*multiplier);
-              } else {
-                  leds[i] = CHSV(0, 255, 5*multiplier);  
-              }
-            }
-            
-            ///Set Minutes
-            offset = 6;
-            for (int i = (0+offset); i < (6+offset); i++) {
-              if (bitRead(minutes, (i-offset))) {
-                  leds[i] = CHSV(95, 255, 10*multiplier);
-              } else {
-                  leds[i] = CHSV(95, 255, 5*multiplier);  
-              }
-            }
-    
-            ///Set Hours
-            offset = 12;
-            for (int i = (0+offset); i < (5+offset); i++) {
-              if (bitRead(hours, (i-offset))) {
-                  leds[i] = CHSV(160, 255, 10*multiplier);
-              } else {
-                  leds[i] = CHSV(160, 255, 5*multiplier);  
-              }
-            }
-     
-          break;
-          */
-          
+          break;         
   }
   
    FastLED.show(); // This sends the updated pixel color to the hardware.
